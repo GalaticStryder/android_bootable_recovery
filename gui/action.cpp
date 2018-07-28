@@ -213,6 +213,7 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(fixpermissions);
 		ADD_ACTION(dd);
 		ADD_ACTION(partitionsd);
+		ADD_ACTION(treblize);
 		ADD_ACTION(installhtcdumlock);
 		ADD_ACTION(htcdumlockrestoreboot);
 		ADD_ACTION(htcdumlockreflashrecovery);
@@ -1287,6 +1288,28 @@ int GUIAction::dd(std::string arg)
 	}
 	operation_end(0);
 	return 0;
+}
+
+int GUIAction::treblize(std::string arg __unused)
+{
+	operation_start("Treblize");
+	int ret_val = 0;
+
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		int allow_treblization;
+		DataManager::GetValue(TW_ALLOW_TREBLIZATION, allow_treblization);
+		if (allow_treblization == 0) {
+			gui_err("allow_treblization=This device does not allow Treble conversion! Aborting!");
+		} else {
+			if (!PartitionManager.Convert_To_Treble())
+				ret_val = 1; // failed
+		}
+	}
+	operation_end(ret_val);
+	return 0;
+
 }
 
 int GUIAction::partitionsd(std::string arg __unused)

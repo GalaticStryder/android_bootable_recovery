@@ -2029,6 +2029,27 @@ int TWPartitionManager::Partition_SDCard(void) {
 	return true;
 }
 
+int TWPartitionManager::Convert_To_Treble(void) {
+	string Command;
+	string Device = "/dev/block/sde";
+
+	gui_msg("treble_conversion=Converting to Treble...");
+
+	// Convert partition type to Linux
+	Command = "sgdisk --typecode=34:8300 " + Device;
+	if (TWFunc::Exec_Cmd(Command) != 0)
+		LOGINFO("Failed to set partition type to Linux\n");
+
+	// Convert partition name to 'vendor'
+	Command = "sgdisk --change-name=34:vendor " + Device;
+	if (TWFunc::Exec_Cmd(Command) != 0)
+		LOGINFO("Failed to set partition name to vendor\n");
+
+	Update_System_Details();
+	gui_msg("treble_complete=Conversion complete.");
+	return true;
+}
+
 void TWPartitionManager::Get_Partition_List(string ListType, std::vector<PartitionList> *Partition_List) {
 	std::vector<TWPartition*>::iterator iter;
 	if (ListType == "mount") {

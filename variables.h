@@ -90,6 +90,8 @@
 
 #define TW_ALLOW_PARTITION_SDCARD   "tw_allow_partition_sdcard"
 
+#define TW_ALLOW_TREBLIZATION       "tw_allow_treblization"
+
 #define TW_SCREEN_OFF               "tw_screen_off"
 
 #define TW_REBOOT_SYSTEM            "tw_reboot_system"

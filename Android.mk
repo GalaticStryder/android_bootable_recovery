@@ -414,12 +414,8 @@ ifneq ($(TW_NO_EXFAT), true)
         LOCAL_ADDITIONAL_DEPENDENCIES += exfat-fuse
     endif
 endif
-ifeq ($(BOARD_HAS_NO_REAL_SDCARD),)
-    ifeq ($(shell test $(PLATFORM_SDK_VERSION) -gt 22; echo $$?),0)
-        LOCAL_ADDITIONAL_DEPENDENCIES += sgdisk
-    else
-        LOCAL_ADDITIONAL_DEPENDENCIES += sgdisk_static
-    endif
+ifeq ($(TW_ALLOW_TREBLIZATION), true)
+    LOCAL_ADDITIONAL_DEPENDENCIES += sgdisk_static
 endif
 ifneq ($(TW_EXCLUDE_ENCRYPTED_BACKUPS), true)
     LOCAL_ADDITIONAL_DEPENDENCIES += openaes openaes_license

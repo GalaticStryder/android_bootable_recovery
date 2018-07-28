@@ -3495,6 +3495,13 @@
 			</button>
 
 			<button style="main_button">
+				<condition var1="tw_allow_treblization" var2="1"/>
+				<placement x="%center_x%" y="%row19_y%"/>
+				<text>{@treblize_btn=Treblize}</text>
+				<action function="page">treble</action>
+			</button>
+
+			<button style="main_button">
 				<condition var1="tw_show_dumlock" var2="1"/>
 				<placement x="%center_x%" y="%row19_y%"/>
 				<text>{@dumlock_btn=HTC Dumlock}</text>
@@ -3524,6 +3531,41 @@
 			<action>
 				<touch key="back"/>
 				<action function="page">main</action>
+			</action>
+		</page>
+
+		<page name="treble">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@advanced_hdr=Advanced}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_conversion=Treble Conversion}</text>
+			</text>
+
+			<slider>
+				<text>{@swipe_to_treblize=Swipe to Start Conversion}</text>
+				<actions>
+					<action function="set">tw_back=advanced</action>
+					<action function="set">tw_action=treblize</action>
+					<action function="set">tw_has_action2=0</action>
+					<action function="set">tw_show_reboot=1</action>
+					<action function="page">action_page</action>
+				</actions>
+			</slider>
+
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+
+			<action>
+				<touch key="back"/>
+				<action function="page">advanced</action>
 			</action>
 		</page>
 

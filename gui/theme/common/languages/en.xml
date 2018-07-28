@@ -70,6 +70,7 @@
 		<string name="file_selector_folders_hdr">Folders</string>
 		<string name="select_file_from_storage">Select File from %tw_storage_display_name% (%tw_storage_free_size% MB)</string>
 		<string name="adb_sideload_btn">ADB Sideload</string>
+		<string name="treblize_btn">Treblize</string>
 		<string name="install_hdr">Install</string>
 		<string name="select_storage_hdr">Select Storage</string>
 		<string name="select_storage_btn">Select Storage</string>
@@ -407,6 +408,13 @@
 		<string name="partitioning_sd">Partitioning SD card...</string>
 		<string name="partitioning_sd2">This will take a few minutes.</string>
 		<string name="part_sd_complete">Partitioning Complete</string>
+		<!-- TREBLE -->
+		<string name="treble_conversion">Treble Conversion</string>
+		<string name="swipe_to_treblize">Swipe to Start Conversion</string>
+		<string name="allow_treblization">This device does not allow Treble conversion! Aborting!</string>
+		<string name="treble_conversion">Converting to Treble...</string>
+		<string name="treble_complete">Conversion complete.</string>
+		<!-- TREBLE END -->
 		<string name="dumlock_hdr">HTC Dumlock</string>
 		<string name="dumlock_restore_btn">Restore Original Boot</string>
 		<string name="dumlock_restore_confirm">Restore original boot image?</string>

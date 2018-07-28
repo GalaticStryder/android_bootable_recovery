@@ -304,6 +304,7 @@ public:
 	void Mount_All_Storage(void);                                             // Mounts all storage locations
 	void UnMount_Main_Partitions(void);                                       // Unmounts system and data if not data/media and boot if boot is mountable
 	int Partition_SDCard(void);                                               // Repartitions the sdcard
+	int Convert_To_Treble(void);                                              // Converts partition to Treble
 	TWPartition *Get_Default_Storage_Partition();                             // Returns a pointer to a default storage partition
 	int Check_Backup_Cancel();                                                // Returns the value of stop_backup
 	int Cancel_Backup();                                                      // Signals partition backup to cancel

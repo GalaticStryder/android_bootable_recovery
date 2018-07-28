@@ -598,6 +598,13 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue(TW_ALLOW_PARTITION_SDCARD, "1");
 #endif
 
+#ifdef TW_ALLOW_TREBLIZATION
+	printf("TW_ALLOW_TREBLIZATION := true\n");
+	mConst.SetValue(TW_ALLOW_TREBLIZATION, "1");
+#else
+	mConst.SetValue(TW_ALLOW_TREBLIZATION, "0");
+#endif
+
 #ifdef TW_INCLUDE_DUMLOCK
 	printf("TW_INCLUDE_DUMLOCK := true\n");
 	mConst.SetValue(TW_SHOW_DUMLOCK, "1");

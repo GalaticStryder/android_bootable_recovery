@@ -338,6 +338,7 @@ protected:
 	int fixpermissions(std::string arg);
 	int dd(std::string arg);
 	int partitionsd(std::string arg);
+	int treblize(std::string arg);
 	int installhtcdumlock(std::string arg);
 	int htcdumlockrestoreboot(std::string arg);
 	int htcdumlockreflashrecovery(std::string arg);
